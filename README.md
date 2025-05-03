@@ -71,4 +71,50 @@ Para realizar la adquisición de la señal ECG (electrocardiograma) se utilizo u
 
 *Ubicación de los electrodos para ECG*
 
+## Pre-Procesamiento de la señal
+En el siguiente paso, se realiza el pre procesamiento de la señal por medio de un filtro IIR para observar la señal ECG de manera adecuada y posteriormente realizar el análisis respectivo de ella. Se realiza un Filtro Butterworth con los siguientes parámetros.
+![image](https://github.com/user-attachments/assets/07d50577-7204-4c06-8179-10902cc4ecda)
+
+*Parámetros para el diseño del filtro*
+
+En el cual se establece un filtro que cuenta con una frecuencia de muestreo de 1000 Hz y dos frecuencias de corte entre 0.5 y 40 Hz que son las frecuencias ideales para obtener la mayoría de la energía útil del ECG. La frecuencia de corte baja de 0.5 Hz se encarga de eliminar la línea base es decir el ruido como movimientos o respiración durante la captura de la señal, y la frecuencia de corte alta de 40 Hz elimina el ruido de alta frecuencia preservando las ondas, P, QRS y T. 
+
+Por otro lado, se escoge el filtro Butterworth debido a su respuesta suave y sin ondulaciones que permite preservar bien la forma de la señal. El orden del filtro se establece como 4 ya que mantiene la estabilidad de la señal y proporciona una pendiente adecuada, eliminando componentes fuera de 0.5-40 Hz y sin amplificar el ruido por resonancias.
+
+![image](https://github.com/user-attachments/assets/05827070-a690-4606-a423-f151edf118b1)
+
+*Normalización de la señal*
+
+Esto se realiza ya que los filtros digitales como el realizado trabajan en el dominio discreto, por lo cual se usa la frecuencia de Nyquist que es la mitad de la frecuencia de muestreo, para así poder observar la señal normalizada y convertir las frecuencias en Hz a frecuencias digitales normalizadas. 
+
+![image](https://github.com/user-attachments/assets/8ff9a91e-3468-42ad-9c4d-199bacde7653)
+
+*Calculo de coeficientes*
+
+Una vez normalizadas las frecuencias se calculan los coeficientes de la ecuación donde se colocan las bandas de paso y de rechazo, de igual manera devuelve los coeficientes del filtro donde b es la entrada y a la salida, los cuales definen el filtro en forma de sistema recursivo lineal (IIR).
+
+![image](https://github.com/user-attachments/assets/b3eac311-bd5d-4fe9-882e-612eedf4cedb)
+
+*Ecuación en diferencias del filtro IIR*
+
+Esta sección del código aplica el filtro IIR directamente, usando la ecuación en diferencias que representa la versión discreta en la función de transferencia. Con la siguiente ecuación se realiza la sección del código:
+
+![image](https://github.com/user-attachments/assets/300b4510-cf01-4f4a-9905-29782ce4719d)
+
+*Ecuación general en diferencias* 
+
+Esta ecuación permite aplicar el filtro como se menciono anteriormente, y ya una vez en el código se aplica manualmente desde cero con las condiciones iniciales en 0, permitiendo que recorra cada muestra de la señal de entrada y se calcula la señal filtrada sumando cada termino del numerador y restando las contribuciones de salidas pasadas según la ecuación. Esto permite que el filtro tenga memoria y actúa como IIR.
+
+Ya una vez aplicado el codigo se observa la señal orginial y la señal filtrada, por lo que se puede observar que como la captura duro 6 minutos (360 segundos) no se observa adecuadamente el filtrado de la señal, pero al palicar el filtro a una pequeña parte de la señal se observa como el filtro cumple con eliminar el ruido y actua como filtro pasa banda permitiendo frecuencias de unicamente 0.5-40 Hz.
+
+![image](https://github.com/user-attachments/assets/f17038a4-0b64-497f-af4b-aaf0d74faca0)
+*Comparación de señal orginal y filtrada (360 segundos)*
+
+
+
+
+
+
+
+
 
