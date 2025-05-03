@@ -212,9 +212,10 @@ Se escogio utilizar esta señal ya que para realizar este espectrograma es neces
 
 
 Para comenzar se preparar la señal para la Transformada Wavelet Estacionaria (SWT). Descomponiendo la señal en 4 niveles de wavelet y se calcula el tamaño de bloque para cada nivel. Ademas se lee la cantidad de muestras de la señal interpolada de los intervalos R-R. Y como ultimo se crea niveles de wavelet y se calcula el tamaño de bloque para cada nivel. Ademas se crea el eje de tiempo correspondiente.
+
 ![image](https://github.com/user-attachments/assets/00f21516-1490-49b6-889b-8edc7e0e80d1)
 
-SE definiendo la wavelet que se usaria siendo la daubechie, y de paso definiendo los niveles que se utilizaron. Se aplico  la Transformada Wavelet Discreta Estacionaria (SWT).
+Se definiendo la wavelet que se usaria siendo la daubechie, y de paso definiendo los niveles que se utilizaron. Se aplico  la Transformada Wavelet Discreta Estacionaria (SWT).
 
 A diferencia de la transformada wavelet discreta estándar (DWT), la SWT no cambia la longitud de la señal y mantiene alineadas las características en el tiempo, lo que es útil para análisis como el espectrograma.
 
