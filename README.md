@@ -211,24 +211,35 @@ Detectar cambios en la potencia espectral en momentos específicos, lo que ayuda
 Se escogio utilizar esta señal ya que para realizar este espectrograma es necesario usar los r-r calculados con anterioridad y esta tienen la diferencia de ser discreta a diferencia de la señal extraía directamente que es continua. Al ser una señal discreta es necesario una función de wavelet que comparta esta característica además de ser útil para señales fisiológicas. Con estos puntos se decidió que la función que cumplía estas características es la daubechie ya es común utilizarla en ecg además de ser una función discreta ideal para este laboratorio.
 
 
-Para comenzar se preparar la señal para la Transformada Wavelet Estacionaria (SWT). Descomponiendo la señal en 4 niveles de wavelet y se calcu;a el tamaño de bloque para cada nivel. Ademas se lee la cantidad de muestras de la señal interpolada de los intervalos R-R. Y como ultimo se crea niveles de wavelet y se calcula el tamaño de bloque para cada nivel. Ademas se crea el eje de tiempo correspondiente.
+Para comenzar se preparar la señal para la Transformada Wavelet Estacionaria (SWT). Descomponiendo la señal en 4 niveles de wavelet y se calcula el tamaño de bloque para cada nivel. Ademas se lee la cantidad de muestras de la señal interpolada de los intervalos R-R. Y como ultimo se crea niveles de wavelet y se calcula el tamaño de bloque para cada nivel. Ademas se crea el eje de tiempo correspondiente.
 ![image](https://github.com/user-attachments/assets/00f21516-1490-49b6-889b-8edc7e0e80d1)
 
 SE definiendo la wavelet que se usaria siendo la daubechie, y de paso definiendo los niveles que se utilizaron. Se aplico  la Transformada Wavelet Discreta Estacionaria (SWT).
 
 A diferencia de la transformada wavelet discreta estándar (DWT), la SWT no cambia la longitud de la señal y mantiene alineadas las características en el tiempo, lo que es útil para análisis como el espectrograma.
+
 ![image](https://github.com/user-attachments/assets/431d58e6-711a-43d6-9a0d-a35d930bc2fd)
 
 Se extraen los coeficientes de detalle para graficar.
+
 ![image](https://github.com/user-attachments/assets/f42e9f63-b747-4220-a65e-7a8322799c69)
 
 Por ultimo se grafica.
+
 ![image](https://github.com/user-attachments/assets/b83982ff-1dda-4775-8959-f6c89a637bdb)
 
 Como resultado de este proceso se obtuvo este espectrograma.
+
 ![image](https://github.com/user-attachments/assets/fa9cc19b-2e3d-427c-b924-1e26269f5e34)
 
+Este escalograma muestra cómo varía la potencia espectral del ritmo cardíaco a lo largo del tiempo, distribuida en 4 niveles de descomposición mediante la transformada wavelet estacionaria con Daubechies 4.
+🔹 1. Banda de baja frecuencia (LF) – Niveles 3 y 4.
+Se aprecian claramente zonas de color amarillo a rojo —indicadoras de alta potencia— concentradas en los niveles 3 y 4, que cubren la banda de baja frecuencia (0.04–0.15 Hz). Estas elevadas intensidades espectrales señalan episodios de predominio simpático en momentos específicos del registro por ejemplo, alrededor de los 100–110 s, 180–210 s y próximos a los 300 s, lo que sugiere que en esas ventanas temporales el sistema nervioso autónomo se encontraba más activado bajo un perfil simpático. La sucesión de estos picos de potencia a lo largo del tiempo revela, además, fluctuaciones dinámicas del tono simpático que podrían corresponder a respuestas fisiológicas o emocionales variables durante la prueba.
+🔹 2. Banda de alta frecuencia (HF) – Nivel 2.
+Por otro lado, el nivel 2, correspondiente a la banda de alta frecuencia (0.15–0.4 Hz) y asociado a la actividad parasimpática, muestra una potencia moderada (verde-amarilla) en ciertos intervalos. Este patrón indica una modulación vagal intermitente por ejemplo, relacionada con ciclos respiratorios o fases de relajación que, aunque menos intensa que la LF, confirma la presencia de influencias parasimpáticas en el control del ritmo cardíaco a lo largo del tiempo.
 
+El espectrograma muestra la variabilidad de los intervalos R–R, El color (rojo/amarillo) indica mucha energía o potencia en esa banda de frecuencia (LF o HF) en ese momento. Y traza la variabilidad de los intervalos R–R a esas frecuencias. La activación simpática suele reducir la variabilidad (disminuye el poder en bandas, sobre todo en HF), y al mismo tiempo aumenta la frecuencia media de latidos.
+Por ello, un pico rojo en LF indica más potencia en modulaciones lentas (0.04–0.15 Hz), asociadas a la influencia simpática/vagal, pero no significa necesariamente que el corazón esté latiendo más rápido en ese instante: significa que la variabilidad a esas escalas es mayor.
 
 # Preguntas clave.
 1. ¿Qué diferencias se observan entre los análisis en el dominio del tiempo y el dominio tiempo-frecuencia?
