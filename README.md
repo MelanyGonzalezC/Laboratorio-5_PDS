@@ -1,4 +1,6 @@
 # Laboratorio-5_PDS
+
+## Fundamento Teórico
 ### Sistema Nervioso Autónomo (SNA)
 Es la parte funcional del sistema nervioso que se encarga de la regulación de las funciones viscerales involuntarias del organismo, mantiene la homeostasis y controla la presión arterial, la frecuencia cardiaca, entre otros. Se puede dividir funcionalmente en simpático y parasimpático
 
@@ -61,4 +63,12 @@ Tipos de transformada Wavelet:
 *Tipos de Wavelets*
 
 Las Wavelets mas usadas para señales fisiológicas son las primeras 5 mencionadas ya que cada una como se menciona anteriormente, cuenta con aspectos importantes como eliminación de ruido, controlar ya sean frecuencias altas o bajas y estas señales (EEG, ECG, EMG) necesitan un mayor análisis y detección de patrones. 
+
+## Adquisición de la señal ECG
+Para realizar la adquisición de la señal ECG (electrocardiograma) se utilizo una DAQ (Data Acquisition Device) como sistema de adquisición de datos, se realizo la connfiguración adecuada para capturar de forma continua la señal del corazón durante un periodo total de 6 minutos. La señal se divide en dos etapas: los primeros 3 minutos corresponden a una fase de relajación, donde la persona esta en reposo, tranquila y sentada o recostada, para obtener una línea base de la actividad cardíaca bajo influencia predominante del sistema nervioso parasimpático. Posteriormente, se inicia la fase de estrés o estimulación, también de 3 minutos, en la que se induce un aumento en la frecuencia cardíaca por medio de un juego que eleva el estres, con el objetivo de activar el sistema nervioso simpático. Durante toda la adquisición, la DAQ esta conectada a electrodos de superficie colocados en el cuerpo y se configura con una frecuencia de muestreo adecuada (en este caso 1000 Hz) para capturar con precisión las ondas del ECG, especialmente los intervalos R-R que luego se analizarán para calcular la variabilidad de la frecuencia cardíaca (HRV) y observar las diferencias fisiológicas entre ambos estados.
+
+![image](https://github.com/user-attachments/assets/1e2e2887-9f9a-466a-a795-12f7cae78d15)
+
+*Ubicación de los electrodos para ECG*
+
 
