@@ -286,6 +286,21 @@ La selección de la función wavelet influye de manera directa en la resolución
 
 El estudio de la HRV tiene usos clínicos y deportivas fundamentales. En el ámbito médico, facilita la identificación de problemas autonómicos en pacientes con afecciones cardiovasculares, diabetes o desórdenes neurológicos, al mostrar cambios en la dinámica simpática y parasimpática. En áreas como el deporte y la psicología, contribuye a supervisar el estrés, la recuperación y la carga de entrenamiento a través de la observación de cambios en vivo. Además, estos estudios son esenciales en contextos de biofeedback y control adaptable en aparatos médicos, tales como marcapasos inteligentes o exoesqueletos rehabilitadores que se adaptan a la situación del paciente en tiempo real.
 
+# Requisitos:
+Python 3.9
+Wfdb
+Numpy
+Matplotlib
+Scipy
+pywt
+pandas
+
+
+# Contactanos:
+est.mariajose.perez@unimilitar.edu.co
+est.melany.gonzalez@unimilitar.edu.co
+est.david.smoreno@unimilitar.edu.co
+
 
 
 
