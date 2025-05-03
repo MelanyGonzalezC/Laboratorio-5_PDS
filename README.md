@@ -234,11 +234,14 @@ Como resultado de este proceso se obtuvo este espectrograma.
 
 Este escalograma muestra cómo varía la potencia espectral del ritmo cardíaco a lo largo del tiempo, distribuida en 4 niveles de descomposición mediante la transformada wavelet estacionaria con Daubechies 4.
 
-🔹 1. Banda de baja frecuencia (LF) – Niveles 3 y 4.
-Se aprecian claramente zonas de color amarillo a rojo —indicadoras de alta potencia— concentradas en los niveles 3 y 4, que cubren la banda de baja frecuencia (0.04–0.15 Hz). Estas elevadas intensidades espectrales señalan episodios de predominio simpático en momentos específicos del registro por ejemplo, alrededor de los 100–110 s, 180–210 s y próximos a los 300 s, lo que sugiere que en esas ventanas temporales el sistema nervioso autónomo se encontraba más activado bajo un perfil simpático. La sucesión de estos picos de potencia a lo largo del tiempo revela, además, fluctuaciones dinámicas del tono simpático que podrían corresponder a respuestas fisiológicas o emocionales variables durante la prueba.
+1. Banda de baja frecuencia (LF) – Niveles 3 y 4.
+Se aprecian claramente zonas de color amarillo a rojo como indicadoras de alta potencia/concentradas en los niveles 3 y 4, que cubren la banda de baja frecuencia (0.04–0.15 Hz). Estas elevadas intensidades espectrales señalan episodios de predominio simpático en momentos específicos del registro por ejemplo, alrededor de los 100–110 s, 180–210 s y próximos a los 300 s, lo que sugiere que en esas ventanas de tiempo el sistema nervioso autónomo se encontraba más activado bajo un perfil simpático. La sucesión de estos picos de potencia a lo largo del tiempo revela, además, fluctuaciones dinámicas del tono simpático que podrían corresponder a respuestas fisiológicas o emocionales previstas para la toma de datos durante la prueba.
 
-🔹 2. Banda de alta frecuencia (HF) – Nivel 2.
+2. Banda de alta frecuencia (HF) – Nivel 2.
 Por otro lado, el nivel 2, correspondiente a la banda de alta frecuencia (0.15–0.4 Hz) y asociado a la actividad parasimpática, muestra una potencia moderada (verde-amarilla) en ciertos intervalos. Este patrón indica una modulación vagal intermitente por ejemplo, relacionada con ciclos respiratorios o fases de relajación que, aunque menos intensa que la LF, confirma la presencia de influencias parasimpáticas en el control del ritmo cardíaco a lo largo del tiempo.
+
+3. Nivel 1 – Ruido o detalles de alta frecuencia
+ Este nivel suele contener componentes de muy alta frecuencia o ruido. Pero como se puede ver en el gráfico, se ve muy oscuro (poca potencia), lo que es esperable.
 
 El espectrograma muestra la variabilidad de los intervalos R–R, El color (rojo/amarillo) indica mucha energía o potencia en esa banda de frecuencia (LF o HF) en ese momento. Y traza la variabilidad de los intervalos R–R a esas frecuencias. La activación simpática suele reducir la variabilidad (disminuye el poder en bandas, sobre todo en HF), y al mismo tiempo aumenta la frecuencia media de latidos.
 Por ello, un pico rojo en LF indica más potencia en modulaciones lentas (0.04–0.15 Hz), asociadas a la influencia simpática/vagal, pero no significa necesariamente que el corazón esté latiendo más rápido en ese instante: significa que la variabilidad a esas escalas es mayor.
