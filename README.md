@@ -233,8 +233,10 @@ Como resultado de este proceso se obtuvo este espectrograma.
 ![image](https://github.com/user-attachments/assets/fa9cc19b-2e3d-427c-b924-1e26269f5e34)
 
 Este escalograma muestra cómo varía la potencia espectral del ritmo cardíaco a lo largo del tiempo, distribuida en 4 niveles de descomposición mediante la transformada wavelet estacionaria con Daubechies 4.
+
 🔹 1. Banda de baja frecuencia (LF) – Niveles 3 y 4.
 Se aprecian claramente zonas de color amarillo a rojo —indicadoras de alta potencia— concentradas en los niveles 3 y 4, que cubren la banda de baja frecuencia (0.04–0.15 Hz). Estas elevadas intensidades espectrales señalan episodios de predominio simpático en momentos específicos del registro por ejemplo, alrededor de los 100–110 s, 180–210 s y próximos a los 300 s, lo que sugiere que en esas ventanas temporales el sistema nervioso autónomo se encontraba más activado bajo un perfil simpático. La sucesión de estos picos de potencia a lo largo del tiempo revela, además, fluctuaciones dinámicas del tono simpático que podrían corresponder a respuestas fisiológicas o emocionales variables durante la prueba.
+
 🔹 2. Banda de alta frecuencia (HF) – Nivel 2.
 Por otro lado, el nivel 2, correspondiente a la banda de alta frecuencia (0.15–0.4 Hz) y asociado a la actividad parasimpática, muestra una potencia moderada (verde-amarilla) en ciertos intervalos. Este patrón indica una modulación vagal intermitente por ejemplo, relacionada con ciclos respiratorios o fases de relajación que, aunque menos intensa que la LF, confirma la presencia de influencias parasimpáticas en el control del ritmo cardíaco a lo largo del tiempo.
 
