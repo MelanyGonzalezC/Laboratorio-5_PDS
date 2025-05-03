@@ -120,16 +120,22 @@ Teniendo la señal ya filtrada, de acuerdo con lo explicado anteriormente, se pr
 En primera medida, lo que se hace es entender de forma correcta para que funciona todo esto, los picos R son aquellos puntos más altos de cada complejo QRS en un ECG, estos lo que hacen es representar la despolarización de los ventrículos, en términos más sencillos el momento de contracción de los ventrículos del corazón, son picos detectables y que marcan los instantes de cada latido. 
 
 ![image](https://github.com/user-attachments/assets/f93d8397-8f2a-468d-bd9e-b75b14139b17)
+
+
 *Detección de los picos R en Python.*
 
 En el código la función find_peaks lo que hace es buscar los máximos locales en la señal ya previamente filtrada, por otro lado, height=0.5 evita que el ruido que aún persiste lo detecte como pico por ende soloo considera como pico auqellos de amplitud mayor a 0.5 y la distance=int(0.6* fs) impone que haya al menos 0.6 s entre picos ya que es una equivalencia a la frecuencia cardiaca máxima de 100lpm y finalmente tiempos_picos es el vector de tiempo que corresponde a los picos, esto es bastante importante ya que su identificación precisa es la base para un análisis HRV adecuado. 
 
 ![image](https://github.com/user-attachments/assets/9d6119a9-c422-4f4a-9b89-a76b269f3240)
+
+
 *Picos R de la señal filtrada.*
 
 Por otro lado, los intervalos R-R son el paso siguiente ya que es el tiempo entre un pico R y el siguiente y esto es una medida de la frecuencia cardiaca instantánea. Gracias a estos intervalos se puede ver como varia el tiempo entre latidos, esto indica que el sistema nervioso autónomo está actuando sobre el corazón. 
 
 ![image](https://github.com/user-attachments/assets/94347c20-cdc6-418d-a01c-33e6fbb4e3ad)
+
+
 *Intervalos R-R.*
 
 
@@ -137,6 +143,8 @@ Para la parte del código lo que se implemento fue np.diff(tiempos_picos) lo que
 
 
 ![image](https://github.com/user-attachments/assets/ec5fed8f-ef3c-42fe-90f6-09b24b30d838)
+
+
 *Señal de los intervalos R-R obtenidos en el tiempo.*
 
 
