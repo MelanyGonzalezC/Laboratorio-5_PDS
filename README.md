@@ -193,6 +193,32 @@ El valor de la media fue de 0.9900 s  esto indica que el corazón latió aproxim
 
 El histograma de intervalos R-R revela que la mayoría de los valores se agrupan entre 0.95 y 1.05 segundos, con un máximo de 1.0 s aproximadamente, lo que se alinea con una media RR de 0.9900 s e indica un ritmo cardíaco estable y regular. La distribución es un poco asimétrica hacia la derecha (sesgo positivo), a causa de ciertos valores dispersos entre 1.4 y 1.6 s, lo que es habitual en señales fisiológicas reales debido a posibles interrupciones sinusales, artefactos o fluctuaciones en la respiración. Estos valores extremos, a pesar de ser escasos, no influyen de manera significativa en la media, pero sí aportan a la dispersión global que se observa en el estudio de la variabilidad o también cabe la posibilidad que sea un poco de activación mínima simpática detectada al final puesto que en ese tiempo era cuando ella estaba sometida a estrés o a actos que aumentaran su frecuencia cardiaca.
 
+*Aplicación de transformada Wavelet*
+La transformada wavelet estacionaria (SWT) con Daubechies 4 (db4) se usa para analizar cómo varían las frecuencias del ritmo cardíaco (HRV) a lo largo del tiempo. Esto permite:
+
+Separar las señales en diferentes bandas de frecuencia (baja y alta).
+
+Observar la actividad simpática y parasimpática, ya que:
+
+Las frecuencias bajas (LF) están asociadas a la actividad simpática.
+
+Las frecuencias altas (HF) están asociadas a la actividad parasimpática.
+
+Detectar cambios en la potencia espectral en momentos específicos, lo que ayuda a entender cómo responde el sistema nervioso autónomo ante estímulos o condiciones fisiológicas.
+
+![image](https://github.com/user-attachments/assets/d576008f-118d-4883-b0c0-1feb03a5b355)
+
+Se escogio utilizar esta señal ya que para realizar este espectrograma es necesario usar los r-r calculados con anterioridad y esta tienen la diferencia de ser discreta a diferencia de la señal extraía directamente que es continua. Al ser una señal discreta es necesario una función de wavelet que comparta esta característica además de ser útil para señales fisiológicas. Con estos puntos se decidió que la función que cumplía estas características es la daubechie ya es común utilizarla en ecg además de ser una función discreta ideal para este laboratorio.
+
+Para comenzar se comenzo definiendo la wavelet que se usaria siendo la daubechie, y de paso definiendo los niveles que se utilizaron. Se aplico  la Transformada Wavelet Discreta Estacionaria (SWT).
+
+A diferencia de la transformada wavelet discreta estándar (DWT), la SWT no cambia la longitud de la señal y mantiene alineadas las características en el tiempo, lo que es útil para análisis como el espectrograma.
+![image](https://github.com/user-attachments/assets/431d58e6-711a-43d6-9a0d-a35d930bc2fd)
+
+Se preparar la señal para la Transformada Wavelet Estacionaria (SWT). Descomponiendo la señal en 4
+niveles de wavelet y se calcu;a el tamaño de bloque para cada nivel. Ademas se lee la cantidad de muestras de la señal interpolada de los intervalos R-R.
+![image](https://github.com/user-attachments/assets/00f21516-1490-49b6-889b-8edc7e0e80d1)
+
 
 # Preguntas clave.
 1. ¿Qué diferencias se observan entre los análisis en el dominio del tiempo y el dominio tiempo-frecuencia?
