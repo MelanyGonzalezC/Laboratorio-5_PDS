@@ -76,6 +76,24 @@ Para realizar la adquisición de la señal ECG (electrocardiograma) se utilizo u
 
 *Ubicación de los electrodos para ECG*
 
+Teniendo en cuenta esta revision bibliografica se pudo eleboarar el siguiente plan de accion, destacamos que como es amplio se puso de forma muy general, y ademas se adjunta para que facilite su visualizacion. 
+
+
+
+
+![image](https://github.com/user-attachments/assets/9d909f38-2b4b-4126-8a3c-90f94dc6fb19)
+
+
+![image](https://github.com/user-attachments/assets/36ed63ca-f29a-4653-ac9e-984a3ac079ae)
+
+
+
+
+
+
+
+
+
 ## Pre-Procesamiento de la señal
 En el siguiente paso, se realiza el pre procesamiento de la señal por medio de un filtro IIR para observar la señal ECG de manera adecuada y posteriormente realizar el análisis respectivo de ella. Se realiza un Filtro Butterworth con los siguientes parámetros.
 ![image](https://github.com/user-attachments/assets/07d50577-7204-4c06-8179-10902cc4ecda)
