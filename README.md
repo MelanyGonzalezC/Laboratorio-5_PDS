@@ -210,14 +210,24 @@ Detectar cambios en la potencia espectral en momentos específicos, lo que ayuda
 
 Se escogio utilizar esta señal ya que para realizar este espectrograma es necesario usar los r-r calculados con anterioridad y esta tienen la diferencia de ser discreta a diferencia de la señal extraía directamente que es continua. Al ser una señal discreta es necesario una función de wavelet que comparta esta característica además de ser útil para señales fisiológicas. Con estos puntos se decidió que la función que cumplía estas características es la daubechie ya es común utilizarla en ecg además de ser una función discreta ideal para este laboratorio.
 
-Para comenzar se comenzo definiendo la wavelet que se usaria siendo la daubechie, y de paso definiendo los niveles que se utilizaron. Se aplico  la Transformada Wavelet Discreta Estacionaria (SWT).
+
+Para comenzar se preparar la señal para la Transformada Wavelet Estacionaria (SWT). Descomponiendo la señal en 4 niveles de wavelet y se calcu;a el tamaño de bloque para cada nivel. Ademas se lee la cantidad de muestras de la señal interpolada de los intervalos R-R. Y como ultimo se crea niveles de wavelet y se calcula el tamaño de bloque para cada nivel. Ademas se crea el eje de tiempo correspondiente.
+![image](https://github.com/user-attachments/assets/00f21516-1490-49b6-889b-8edc7e0e80d1)
+
+SE definiendo la wavelet que se usaria siendo la daubechie, y de paso definiendo los niveles que se utilizaron. Se aplico  la Transformada Wavelet Discreta Estacionaria (SWT).
 
 A diferencia de la transformada wavelet discreta estándar (DWT), la SWT no cambia la longitud de la señal y mantiene alineadas las características en el tiempo, lo que es útil para análisis como el espectrograma.
 ![image](https://github.com/user-attachments/assets/431d58e6-711a-43d6-9a0d-a35d930bc2fd)
 
-Se preparar la señal para la Transformada Wavelet Estacionaria (SWT). Descomponiendo la señal en 4
-niveles de wavelet y se calcu;a el tamaño de bloque para cada nivel. Ademas se lee la cantidad de muestras de la señal interpolada de los intervalos R-R.
-![image](https://github.com/user-attachments/assets/00f21516-1490-49b6-889b-8edc7e0e80d1)
+Se extraen los coeficientes de detalle para graficar.
+![image](https://github.com/user-attachments/assets/f42e9f63-b747-4220-a65e-7a8322799c69)
+
+Por ultimo se grafica.
+![image](https://github.com/user-attachments/assets/b83982ff-1dda-4775-8959-f6c89a637bdb)
+
+Como resultado de este proceso se obtuvo este espectrograma.
+![image](https://github.com/user-attachments/assets/fa9cc19b-2e3d-427c-b924-1e26269f5e34)
+
 
 
 # Preguntas clave.
