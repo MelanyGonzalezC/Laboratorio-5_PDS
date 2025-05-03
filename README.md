@@ -148,6 +148,94 @@ Para la parte del código lo que se implemento fue np.diff(tiempos_picos) lo que
 *Señal de los intervalos R-R obtenidos en el tiempo.*
 
 
+Al tener una señal nueva compuesta por los valores de los intervalos R-R a lo largo del tiempo, puedes analizar la variabilidad en esos intervalos. Esta variabilidad se denomina HRV (Heart Rate Variability).
+Este análisis es esencial porque refleja la actividad del sistema nervioso autónomo (SNA): Alta HRV= predominancia del sistema parasimpático (estado de relajación) y baja HRV = predominancia simpática (estrés, ansiedad).
+
+Gracias a esta grafica evidenciamos que en el eje x se encuentra el tiempo en segundos que permite ver el momento del cálculo de un intervalo R-R o el tiempo entre dos latidos y en el eje y Intervalo R-R en segundos, es decir, cuánto tiempo pasó entre dos latidos consecutivos. Además nos permite ver qué mayor parte de la señal esta entre los 0.8 s y 1.1 s Esto indica una frecuencia cardíaca promedio entre aproximadamente, lo cual es un ritmo normal en reposo. Picos elevados cerca de 1.5 s aparecen dos valores aislados en los que el intervalo R-R sube a aproximadamente 1.5 segundos Esto puede deberse a una pausa sinusal (el corazón se detiene brevemente entre latidos) o un artefacto o error en la detección de los picos R (por ejemplo, un pico R omitido)o una respuesta vagal (parasimpática), que puede ralentizar el ritmo momentáneamente, por otro lado, hay pequeñas variaciones a lo largo del tiempo esto representa la variabilidad natural del ritmo cardíaco, que es normal y saludable o las variaciones más rápidas pueden estar relacionadas con la respiración (lo que se llama arritmia sinusal respiratoria).
+
+Nosotros decidimos hacer una gráfica que muestre la frecuencia cardiaca estimada en función del tiempo que se obtiene a partir de los intervalos R-R. Esta visualización es una forma de analizar cómo varía la frecuencia de los latidos cardíacos a lo largo del registro.
+
+![image](https://github.com/user-attachments/assets/c4857770-4699-486b-ad01-3e1aa7607f4e)
+
+
+*Grafico de la frecuencia cardiaca basada en los intervalos R-R.*
+
+
+
+Representa cómo varía la frecuencia cardíaca en el tiempo. Se observan: Variaciones normales (entre 55 y 70 bpm) en gran parte del tiempo, episodios con valores más altos (alrededor de 80 bpm), que podrían reflejar cambios fisiológicos que según nuestro diagrama de explicación sobre cómo se realizó el experimento donde se detecta esa elevación de la frecuencia cardiaca es cuando existió dicha activación del sistema simpático al someterla a estrés debido al juego y generarle presión por ganar y algunos picos inusuales, posiblemente causados por errores en la detección de picos R o artefactos de señal. Este análisis es bastante importante ya que permite observar el comportamiento del ritmo cardiaco a lo largo del tiempo, detecta fluctuaciones naturales del corazón debidas a la regulación autonómica e identificar eventos inusuales, como taquicardia (valores altos) o posibles fallos en la detección (valores extremos).
+
+# Analisis de la HRV en el dominio del tiempo
+La variabilidad de la frecuencia cardíaca (HRV) hace referencia a las variaciones temporales entre los latidos consecutivos del corazón, particularmente en los intervalos R-R, que se derivan de una señal de electrocardiograma (ECG).
+En el ámbito temporal, el análisis implica la determinación de parámetros estadísticos básicos a partir de los intervalos R-R. Estos representan el balance entre la actividad simpática y parasimpática del sistema nervioso autónomo.
+Se determinan dos parámetros fundamentales de HRV en el ámbito temporal:
+RR Media: Costo medio entre los latidos. Ofrece una perspectiva del ritmo medio del corazón.
+SDNN (Desviacion Normal de los intervalos NN): Se trata de la desviación estándar de los intervalos R-R (también conocidos como NN para "normal-anormal"). Representa la variabilidad global del ritmo del corazón. Se trata de un marcador relevante de la salud del sistema nervioso autónomo.
+Estos dos valores sintetizan la variabilidad del ritmo cardíaco a lo largo del tiempo. Cuanto mayor sea la SDNN, más variabilidad existirá, lo que generalmente se asocia con una mejor salud cardiovascular y una mayor adaptabilidad fisiológica.
+
+![image](https://github.com/user-attachments/assets/f21f0256-f50c-447b-8374-2412d03f02dc)
+
+*HRV en el dominio del tiempo.*
+
+Gracias a este código se obtiene la media y la desviación estándar de los intervalos R-R (SDNN) y además se realiza un histograma para evidenciar como está la distribución de los intervalos R-R para si mismo ver el grado de variabilidad en el tiempo. 
+
+![image](https://github.com/user-attachments/assets/184775b9-528c-45e0-b214-e5c4370a4fe4)
+
+
+*Resultados de media y desviación obtenidos.*
+
+El valor de la media fue de 0.9900 s  esto indica que el corazón latió aproximadamente una vez cada 0.99 segundos y con una frecuencia de 60,6 lat/min indicando una frecuencia normal en reposo lo que nos permite ver que durante todo el experimento intervino más el sistema parasimpático puesto que no se logró llegar a los niveles de estrés deseados para que existiera un aumento mayor en la frecuencia cardiaca a pesar de que hubo picos no se evidencian del todo, por otro lado, el SDNN de 0.0945 s indicando que los intervalos R-R varían en promedio 94.5 ms, indicando una variabilidad saludable reflejando una buena regulación autónoma ya que se encontró en reposo durante los primeros 3 minutos de experimento y al final fue cuando se detectó una activación simpática, pero que en nuestro caso no fue muy relevan te porque no se vio muy reflejada en los resultados. 
+
+![image](https://github.com/user-attachments/assets/93e35392-48a3-4304-881b-85bfd14040da)
+
+
+*Histograma de intervalos R-R.*
+
+
+El histograma de intervalos R-R revela que la mayoría de los valores se agrupan entre 0.95 y 1.05 segundos, con un máximo de 1.0 s aproximadamente, lo que se alinea con una media RR de 0.9900 s e indica un ritmo cardíaco estable y regular. La distribución es un poco asimétrica hacia la derecha (sesgo positivo), a causa de ciertos valores dispersos entre 1.4 y 1.6 s, lo que es habitual en señales fisiológicas reales debido a posibles interrupciones sinusales, artefactos o fluctuaciones en la respiración. Estos valores extremos, a pesar de ser escasos, no influyen de manera significativa en la media, pero sí aportan a la dispersión global que se observa en el estudio de la variabilidad o también cabe la posibilidad que sea un poco de activación mínima simpática detectada al final puesto que en ese tiempo era cuando ella estaba sometida a estrés o a actos que aumentaran su frecuencia cardiaca.
+
+
+# Preguntas clave.
+1. ¿Qué diferencias se observan entre los análisis en el dominio del tiempo y el dominio tiempo-frecuencia?
+
+Al contrastar la distribución temporal de las frecuencias adquiridas a través de la transformada wavelet con los parámetros temporales (como la media RR y el SDNN), se puede percibir una correlación adicional entre ambas representaciones del estudio de la variabilidad de la frecuencia cardíaca (HRV). Aunque los parámetros del dominio temporal representan la variabilidad global del ritmo cardíaco por ejemplo, un valor de SDNN superior sugiere mayor variabilidad y, por ende, un mejor equilibrio autonómico, la transformada wavelet facilita la descomposición de la señal en distintas bandas de frecuencia a través del tiempo, ofreciendo datos más precisos acerca de cómo cambia la actividad simpática y parasimpática en momentos concretos.
+El rango de frecuencia baja (LF, normalmente entre 0.04 y 0.15 Hz) se relaciona con una mezcla de actividad simpática y parasimpática, aunque se percibe como un indicador más indirecto del tono simpático. En cambio, la banda de alta frecuencia (HF, 0.15–0.4 Hz) tiene una relación más íntima con la actividad parasimpática, en particular con la modulación vagal del ritmo cardíaco. Un incremento en la potencia de la banda HF sugiere una mayor actividad parasimpática (relajación, reposo), mientras que un incremento en la LF podría sugerir activación simpática (estrés, esfuerzo), aunque esto varía según el entorno fisiológico.
+En nuestro caso como se nota un incremento momentáneo en la potencia de la banda HF en la transformada wavelet, indica una etapa de relajación que también se manifeste como una reducción de la frecuencia cardíaca (incremento de RR) o una mayor estabilidad en la señal (disminución de SDNN). En cambio, un aumento en la potencia LF esta relacionado con una mayor variabilidad en los intervalos R-R (mayor SDNN) o con episodios de activación fisiológica. En conclusión, ambos métodos —temporal y frecuencial— se complementan: el dominio temporal proporciona una perspectiva global de la variabilidad, mientras que el análisis wavelet muestra cuándo se producen las variaciones en la modulación autonómica.
+
+
+2. ¿Qué efecto tiene el uso de diferentes funciones wavelet en los resultados del análisis?
+
+
+   
+La selección de la función wavelet influye de manera directa en la resolución temporal y frecuencial del estudio. En tu situación, se empleó la wavelet Daubechies 4 (db4), la cual es apropiada para señales fisiológicas como el ECG por su excelente ubicación temporal y su habilidad para identificar transiciones rápidas. Si se optara por una wavelet con más momentos de desvanecimiento o más simétrica (como symlets o coiflets), podría optimizar la separación de componentes de frecuencia reducida o producir una representación más fluida, aunque a cambios bruscos. Así, es necesario ajustar la función wavelet al tipo de análisis que se quiere priorizar (precisión temporal o frecuencial).
+
+
+3. ¿Qué aplicaciones reales tiene esta práctica?
+
+
+
+El estudio de la HRV tiene usos clínicos y deportivas fundamentales. En el ámbito médico, facilita la identificación de problemas autonómicos en pacientes con afecciones cardiovasculares, diabetes o desórdenes neurológicos, al mostrar cambios en la dinámica simpática y parasimpática. En áreas como el deporte y la psicología, contribuye a supervisar el estrés, la recuperación y la carga de entrenamiento a través de la observación de cambios en vivo. Además, estos estudios son esenciales en contextos de biofeedback y control adaptable en aparatos médicos, tales como marcapasos inteligentes o exoesqueletos rehabilitadores que se adaptan a la situación del paciente en tiempo real.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
